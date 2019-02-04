@@ -1,7 +1,7 @@
 // Keys used when running locally
 module.exports = {
   mongoURI:
-    "mongodb://admin:admin123@ds113923.mlab.com:13923/lamecodashboard" /* Database link */,
+    "mongodb://admin:oddessey2018@ds046667.mlab.com:46667/oddessey-dashboard" /* Database link */,
   secretOrKey:
     "secretOrKey27985415236971579841271975997839145284" /* Secret key */,
   mailHost:
