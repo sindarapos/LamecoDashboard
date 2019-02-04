@@ -22,7 +22,11 @@ const DashboardSchema = new Schema({
   },
   content: {
     type: String
-  }
+  },
+  components: [{
+      type: Schema.Types.ObjectId,
+      ref: "component"
+  }]
 });
 
 module.exports = Dashboard = mongoose.model("dashboard", DashboardSchema);
