@@ -11,6 +11,9 @@ import { createElement } from "../gridItems/componentFactory";
 import EditDashboardTitle from "./EditDashboardTitle";
 import BackButton from "./Backbutton";
 import Loader from "../common/Loader";
+import {
+  WIDGET_TYPES_AS_VALUES_WITH_LABELS
+} from '../gridItems/constants';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 const layout = [];
@@ -391,6 +394,7 @@ class DashboardEdit extends Component {
               handle={handle}
             />
             <WidgetSelecter
+              options={WIDGET_TYPES_AS_VALUES_WITH_LABELS}
               selectedOption={selectedOption}
               handleChange={this.handleChange}
               onAddItem={this.onAddItem}
