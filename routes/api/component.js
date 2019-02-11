@@ -67,4 +67,4 @@ const ComponentSchema = new Schema({
     },
 });
 
-module.exports = Dashboard = mongoose.model("dashboard", ComponentSchema);
+module.exports = Dashboard = mongoose.model("component", ComponentSchema);
