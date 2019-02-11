@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const DashboarddCardHolder = children => {
+const DashboardCardHolder = children => {
   return <div className="cardHolder">{children}</div>;
 };
 
-DashboarddCardHolder.propTypes = {
+DashboardCardHolder.propTypes = {
   children: PropTypes.object.isRequired
 };
 
