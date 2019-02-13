@@ -22,6 +22,7 @@ const customStyles = {
 };
 
 const WidgetSelecter = ({
+  options,
   selectedOption,
   handleChange,
   onAddItem,
@@ -53,12 +54,7 @@ const WidgetSelecter = ({
           onChange={handleChange}
           isSearchable={false}
           styles={customStyles}
-          options={[
-            { value: "Text", label: "Text" },
-            { value: "Clock", label: "Clock" },
-            { value: "Photo", label: "Photo" },
-            { value: "Weather", label: "Weather" }
-          ]}
+          options={options}
         />
         <div className="addWidget">{status}</div>
       </div>
@@ -81,6 +77,9 @@ const WidgetSelecter = ({
 };
 
 WidgetSelecter.propTypes = {
+  options: PropTypes.arrayOf(
+    PropTypes.object.isRequired
+  ),
   selectedOption: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
   onAddItem: PropTypes.func.isRequired,

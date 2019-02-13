@@ -6,12 +6,14 @@ import axios from "axios";
 import _ from "lodash";
 import { deleteDashboard } from "../../actions/companyActions";
 import TitleBar from "../bars/TitleBar";
-import Clock from "../gridItems/Clock";
-import Weather from "../gridItems/Weather";
 import WidgetSelecter from "./WidgetSelecter";
+import { createElement } from "../gridItems/componentFactory";
 import EditDashboardTitle from "./EditDashboardTitle";
 import BackButton from "./Backbutton";
 import Loader from "../common/Loader";
+import {
+  WIDGET_TYPES_AS_VALUES_WITH_LABELS
+} from '../gridItems/constants';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 const layout = [];
@@ -117,46 +119,10 @@ class DashboardEdit extends Component {
         });
       });
     }
+
+    // bind function to this
+    this.onRemoveItem = this.onRemoveItem.bind(this);
   }
-
-  /* This function renders all grid items in the layout array. It creates a div
-   * with a remove button, and content. The content managed by a switch statement,
-   * which output is based on the widget property from the grid items.
-   */
-  createElement = el => {
-    const removeStyle = {
-      position: "absolute",
-      right: 10,
-      top: 5,
-      cursor: "pointer"
-    };
-    const i = el.i;
-    const widget = el.widget;
-
-    return (
-      <div key={i} data-grid={el}>
-        {(() => {
-          switch (widget) {
-            case "Clock":
-              return <Clock />;
-            case "Photo":
-              return <div className="photo" />;
-            case "Weather":
-              return <Weather />;
-            default:
-              return <div className="textWidget">{widget}</div>;
-          }
-        })()}
-        <span
-          className="remove"
-          style={removeStyle}
-          onClick={this.onRemoveItem.bind(this, i)}
-        >
-          x
-        </span>
-      </div>
-    );
-  };
 
   /* The onAddItem() function is called when the user clicks on the 'Add Item' button.
    * It adds a new grid item to the state, and takes the selected item in the dropmenu
@@ -403,7 +369,7 @@ class DashboardEdit extends Component {
             onBreakPointChange={this.onBreakPointChange}
             {...this.props}
           >
-            {_.map(items, el => this.createElement(el))}
+            {_.map(items, el => createElement(el, () => this.onRemoveItem(el.i)))}
           </ResponsiveReactGridLayout>
         );
       } else {
@@ -428,6 +394,7 @@ class DashboardEdit extends Component {
               handle={handle}
             />
             <WidgetSelecter
+              options={WIDGET_TYPES_AS_VALUES_WITH_LABELS}
               selectedOption={selectedOption}
               handleChange={this.handleChange}
               onAddItem={this.onAddItem}
