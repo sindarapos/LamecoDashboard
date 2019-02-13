@@ -28,7 +28,10 @@ const createElement = (element, handleRemove) => {
           case "Weather":
             return <Weather/>;
           case "ApplicationShortCut":
-            return <ApplicationShortCut/>;
+            return <ApplicationShortCut
+              title={'Invision'}
+              onClick={() => window.location = 'https://invisionapp.com'}
+            />;
           default:
             return <div className="textWidget">{widget}</div>;
         }
