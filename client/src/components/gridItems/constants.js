@@ -3,7 +3,8 @@ const WIDGET_TYPES = [
   'Clock',
   'Photo',
   'Weather',
-  'ApplicationShortCut'
+  'ApplicationShortCut',
+  'Slide'
 ];
 
 const WIDGET_LABELS = [
@@ -12,6 +13,7 @@ const WIDGET_LABELS = [
   'Photo',
   'Weather',
   'Application shortcut',
+  'Slide'
 ];
 
 const WIDGET_TYPES_AS_VALUES_WITH_LABELS = WIDGET_TYPES.map((widgetType, index) =>
