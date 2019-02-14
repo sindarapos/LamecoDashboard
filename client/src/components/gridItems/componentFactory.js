@@ -6,6 +6,7 @@ import React from "react";
 import Clock from "./Clock";
 import Weather from "./Weather";
 import ApplicationShortCut from './ApplicationShortCut';
+import Slide from "./Slide";
 
 const createElement = (element, handleRemove) => {
   const removeStyle = {
@@ -31,6 +32,16 @@ const createElement = (element, handleRemove) => {
             return <ApplicationShortCut
               title={'Invision'}
               onClick={() => window.location = 'https://invisionapp.com'}
+            />;
+          case "Slide":
+            return <Slide
+              title={'Ze slide of slides'}
+              content={{
+                type: 'image',
+                imagePath: 'https://picsum.photos/200/300/?random',
+                imageLabel: 'Dis be image',
+              }}
+              description={'Ze slide of slides'}
             />;
           default:
             return <div className="textWidget">{widget}</div>;
