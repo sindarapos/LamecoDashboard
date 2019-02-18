@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextTile from './TextTile';
-import styled from 'styled-components';
 import { Overlay, FullSize } from '../common/spacing';
 import SlideContent from "./SlideContent";
 
@@ -9,7 +8,6 @@ const Slide = (props) => {
   const {
     title,
     description,
-    visible,
     content
   } = props;
 
