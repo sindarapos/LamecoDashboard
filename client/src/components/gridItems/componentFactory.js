@@ -14,7 +14,8 @@ const createElement = (element, handleRemove) => {
     position: "absolute",
     right: 10,
     top: 5,
-    cursor: "pointer"
+    cursor: "pointer",
+    zIndex: 100
   };
   const index = element.i;
   const widget = element.widget;
@@ -71,6 +72,7 @@ const createElement = (element, handleRemove) => {
             return <div className="textWidget">{widget}</div>;
         }
       })()}
+      {/* @ToDo create new component for remove button */}
       <span
         className="remove"
         style={removeStyle}
