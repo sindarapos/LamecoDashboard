@@ -5,12 +5,10 @@ const DEFAULT_PROPS = {
   Z_INDEX: 2
 };
 
-const interpretHorizontalPosition = (position) => {
-  console.log("interpretting horizontal position", position);
-  return position === 'end'
+const interpretHorizontalPosition = (position) =>
+  position === 'end'
     ? 'flex-end'
     : 'flex-start';
-};
 
 const interpretVerticalPosition = (position) =>
   position === 'bottom'
