@@ -16,16 +16,6 @@ const StyledAutoPlaySwipableViews = styled(AutoPlaySwipableViews)`
   > div {
     height: 100%;
     width: 100%;
-    
-    > div {
-      height: 100%;
-      width: 100%;
-      
-      > div {
-        height: 100%;
-        width: 100%;
-      }
-    }
   }
 `;
 
