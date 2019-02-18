@@ -32,7 +32,7 @@ class SlideStepper extends React.Component {
   render() {
     const {
       children,
-      autoPlay,
+      autoplay,
       interval
     } = this.props;
 
@@ -43,7 +43,7 @@ class SlideStepper extends React.Component {
     return (
       <FullSize>
         <StyledAutoPlaySwipableViews
-          autoPlay={autoPlay}
+          autoplay={autoplay}
           interval={interval}
           index={slideIndex}
           onChangeIndex={this.handleChangeSlide}
@@ -59,7 +59,7 @@ SlideStepper.propTypes = {
   children: PropTypes.arrayOf(
     PropTypes.instanceOf(Slide)),
   interval: PropTypes.number,
-  autoPlay: PropTypes.bool,
+  autoplay: PropTypes.bool,
 };
 
 export default SlideStepper;
