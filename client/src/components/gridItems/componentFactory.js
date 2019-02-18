@@ -6,13 +6,16 @@ import React from "react";
 import Clock from "./Clock";
 import Weather from "./Weather";
 import ApplicationShortCut from './ApplicationShortCut';
+import SlideStepper from './SlideStepper';
+import Slide from "./Slide";
 
 const createElement = (element, handleRemove) => {
   const removeStyle = {
     position: "absolute",
     right: 10,
     top: 5,
-    cursor: "pointer"
+    cursor: "pointer",
+    zIndex: 100
   };
   const index = element.i;
   const widget = element.widget;
@@ -32,10 +35,44 @@ const createElement = (element, handleRemove) => {
               title={'Invision'}
               onClick={() => window.location = 'https://invisionapp.com'}
             />;
+          case "Slide":
+            return <Slide
+              title={'Ze slide of slides'}
+              content={{
+                type: 'image',
+                imagePath: 'https://picsum.photos/200/300/?random',
+                imageLabel: 'Dis be image',
+              }}
+              description={'Ze slide of slides'}
+            />;
+          case "SlideStepper":
+            return <SlideStepper
+              autoplay
+            >
+              <Slide
+                title={'Dem first slide'}
+                description={'A nice description, indeed.'}
+                content={{
+                  type: 'image',
+                  imagePath: 'https://picsum.photos/200/300/?random',
+                  imageLabel: 'Dis be image',
+                }}
+              />
+              <Slide
+                title={'Dis be second one'}
+                description={'Something to be reading?'}
+                content={{
+                  type: 'image',
+                  imagePath: 'https://picsum.photos/400/300/?random',
+                  imageLabel: 'Dis be image',
+                }}
+              />
+            </SlideStepper>;
           default:
             return <div className="textWidget">{widget}</div>;
         }
       })()}
+      {/* @ToDo create new component for remove button */}
       <span
         className="remove"
         style={removeStyle}
