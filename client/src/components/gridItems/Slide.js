@@ -2,26 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextTile from './TextTile';
 import { Overlay, FullSize } from '../common/spacing';
-import SlideContent from "./SlideContent";
+import SlideContent from './SlideContent';
 
 const Slide = (props) => {
   const {
     title,
     description,
-    content
+    content,
   } = props;
 
   return (
     <FullSize>
-      <Overlay
-        verticalPosition={'bottom'}
-        horizontalPosition={'end'}
-      >
-        <TextTile
-          title={title}
-          description={description}
-        />
-      </Overlay>
+      {title && description
+        && (
+          <Overlay
+            verticalPosition="bottom"
+            horizontalPosition="end"
+          >
+            <TextTile
+              title={title}
+              description={description}
+            />
+          </Overlay>
+        )
+      }
       <SlideContent
         type={content ? content.type : 'image'}
         content={content}
@@ -31,9 +35,14 @@ const Slide = (props) => {
 };
 
 Slide.propTypes = {
-  label: PropTypes.string,
-  visible: PropTypes.bool,
-  content: PropTypes.oneOf([PropTypes.string, PropTypes.func, PropTypes.object])
+  title: PropTypes.string,
+  description: PropTypes.string,
+  content: PropTypes.oneOf([PropTypes.string, PropTypes.func, PropTypes.object]).isRequired,
+};
+
+Slide.defaultProps = {
+  title: '',
+  description: '',
 };
 
 export default Slide;

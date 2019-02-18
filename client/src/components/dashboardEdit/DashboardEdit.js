@@ -7,7 +7,7 @@ import _ from "lodash";
 import { deleteDashboard } from "../../actions/companyActions";
 import TitleBar from "../bars/TitleBar";
 import WidgetSelecter from "./WidgetSelecter";
-import { createElement } from "../gridItems/componentFactory";
+import createElement from "../gridItems/componentFactory";
 import EditDashboardTitle from "./EditDashboardTitle";
 import BackButton from "./Backbutton";
 import Loader from "../common/Loader";

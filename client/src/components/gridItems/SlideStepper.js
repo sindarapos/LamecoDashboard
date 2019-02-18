@@ -4,7 +4,7 @@ import SwipableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import styled from 'styled-components';
 import Slide from './Slide';
-import FullSize from "../common/spacing/FullSize";
+import FullSize from '../common/spacing/FullSize';
 
 const AutoPlaySwipableViews = autoPlay(SwipableViews);
 
@@ -20,24 +20,26 @@ const StyledAutoPlaySwipableViews = styled(AutoPlaySwipableViews)`
 `;
 
 class SlideStepper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      slideIndex: 0,
+    };
+  }
 
-  state = {
-    slideIndex: 0
-  };
-
-  handleChangeSlide = (index) => {
-    this.setState({slideIndex: index});
-  };
+  handleChangeSlide(index) {
+    this.setState({ slideIndex: index });
+  }
 
   render() {
     const {
       children,
       autoplay,
-      interval
+      interval,
     } = this.props;
 
     const {
-      slideIndex
+      slideIndex,
     } = this.state;
 
     return (
@@ -52,14 +54,21 @@ class SlideStepper extends React.Component {
         </StyledAutoPlaySwipableViews>
       </FullSize>
     );
-  };
+  }
 }
 
 SlideStepper.propTypes = {
   children: PropTypes.arrayOf(
-    PropTypes.instanceOf(Slide)),
+    PropTypes.instanceOf(Slide),
+  ),
   interval: PropTypes.number,
   autoplay: PropTypes.bool,
+};
+
+SlideStepper.defaultProps = {
+  children: <div />,
+  interval: 2000,
+  autoplay: true,
 };
 
 export default SlideStepper;
