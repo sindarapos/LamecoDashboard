@@ -50,21 +50,21 @@ const createElement = (element, handleRemove) => {
             >
               <Slide
                 title={'Dem first slide'}
+                description={'A nice description, indeed.'}
                 content={{
                   type: 'image',
                   imagePath: 'https://picsum.photos/200/300/?random',
                   imageLabel: 'Dis be image',
                 }}
-                description={'A nice description, indeed.'}
               />
               <Slide
                 title={'Dis be second one'}
+                description={'Something to be reading?'}
                 content={{
                   type: 'image',
-                  imagePath: 'https://picsum.photos/200/300/?random',
+                  imagePath: 'https://picsum.photos/400/300/?random',
                   imageLabel: 'Dis be image',
                 }}
-                description={'Something to be reading?'}
               />
             </SlideStepper>;
           default:
