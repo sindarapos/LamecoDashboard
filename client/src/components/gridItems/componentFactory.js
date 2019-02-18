@@ -6,6 +6,7 @@ import React from "react";
 import Clock from "./Clock";
 import Weather from "./Weather";
 import ApplicationShortCut from './ApplicationShortCut';
+import SlideStepper from './SlideStepper';
 import Slide from "./Slide";
 
 const createElement = (element, handleRemove) => {
@@ -43,6 +44,29 @@ const createElement = (element, handleRemove) => {
               }}
               description={'Ze slide of slides'}
             />;
+          case "SlideStepper":
+            return <SlideStepper
+              autoplay
+            >
+              <Slide
+                title={'Dem first slide'}
+                content={{
+                  type: 'image',
+                  imagePath: 'https://picsum.photos/200/300/?random',
+                  imageLabel: 'Dis be image',
+                }}
+                description={'A nice description, indeed.'}
+              />
+              <Slide
+                title={'Dis be second one'}
+                content={{
+                  type: 'image',
+                  imagePath: 'https://picsum.photos/200/300/?random',
+                  imageLabel: 'Dis be image',
+                }}
+                description={'Something to be reading?'}
+              />
+            </SlideStepper>;
           default:
             return <div className="textWidget">{widget}</div>;
         }
