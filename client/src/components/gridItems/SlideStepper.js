@@ -7,7 +7,6 @@ import Slide from './Slide';
 import FullSize from '../common/spacing/FullSize';
 
 const AutoPlaySwipableViews = autoPlay(SwipableViews);
-
 const StyledAutoPlaySwipableViews = styled(AutoPlaySwipableViews)`
   width: 100%;
   height: 100%;
@@ -25,6 +24,10 @@ class SlideStepper extends React.Component {
     this.state = {
       slideIndex: 0,
     };
+
+    // bind 'this' to functions so we don't have to pass this
+    // on every function call
+    this.handleChangeSlide = this.handleChangeSlide.bind(this);
   }
 
   handleChangeSlide(index) {
