@@ -3,14 +3,23 @@ import PropTypes from 'prop-types';
 import { FullSize } from '../common/spacing';
 import styled from 'styled-components';
 
+const StyledFullSizeImageCover = styled(FullSize)`
+  ${props => `
+    background: url(${props.imagePath}) no-repeat center center
+  `}
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+`;
+
 const renderContent = (type, content) => {
   switch(type) {
     case 'image':
       return (
-        <FullSize
-          as={'img'}
-          src={content ? content.imagePath : ''}
-          alt={content ? content.imageLabel : ''}
+        <StyledFullSizeImageCover
+          imagePath={content ? content.imagePath : ''}
+          title={content ? content.imageLabel : ''}
         />
       );
   }
