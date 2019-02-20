@@ -14,21 +14,28 @@ const StyledBody = styled.p`
 `;
 
 const Body = (props) => {
-  const { variant, children } = props;
+  const {
+    variant,
+    children,
+    className,
+  } = props;
+
   return (
     <ExtendWithFont>
-      <StyledBody variant={variant}>{children}</StyledBody>
+      <StyledBody className={className} variant={variant}>{children}</StyledBody>
     </ExtendWithFont>
   );
 };
 
 Body.propTypes = {
   children: PropTypes.string.isRequired,
+  className: PropTypes.string,
   variant: PropTypes.string,
 };
 
 Body.defaultProps = {
   variant: 'normal',
+  className: '',
 };
 
 export default Body;
