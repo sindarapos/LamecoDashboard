@@ -5,7 +5,9 @@ const WIDGET_TYPES = [
   'Weather',
   'ApplicationShortCut',
   'Slide',
-  'SlideStepper'
+  'SlideStepper',
+  'AgendaItem',
+  'Agenda',
 ];
 
 const WIDGET_LABELS = [
@@ -15,15 +17,15 @@ const WIDGET_LABELS = [
   'Weather',
   'Application shortcut',
   'Slide',
-  'Slide Show'
+  'Slide Show',
+  'Agenda Item',
+  'Agenda',
 ];
 
-const WIDGET_TYPES_AS_VALUES_WITH_LABELS = WIDGET_TYPES.map((widgetType, index) =>
-  ({
-    value: widgetType,
-    label: WIDGET_LABELS[index]
-  })
-);
+const WIDGET_TYPES_AS_VALUES_WITH_LABELS = WIDGET_TYPES.map((widgetType, index) => ({
+  value: widgetType,
+  label: WIDGET_LABELS[index],
+}));
 
 export {
   WIDGET_LABELS,
