@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "autoprefixer": "^9.4.8",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "jwt-decode": "^2.2.0",
     "moment": "^2.24.0",
+    "postcss-loader": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-copy-to-clipboard": "^5.0.1",
@@ -40,7 +42,6 @@
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive --use-polling --polling-interval 1000",
-    "install": "npm install --save axios classnames jwt-decode moment react react-copy-to-clipboard react-dom react-grid-layout react-live-clock react-moment react-open-weather react-redux react-router-dom react-scripts react-select react-transition-group redux redux-thunk && npm install --save--dev node-sass-chokidar npm-run-all",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css && react-scripts build",
@@ -48,11 +49,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000",
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "proxy": "http://localhost:5000"
 }
