@@ -3,11 +3,14 @@
  * which output is based on the widget property from the grid items.
  */
 import React from 'react';
+import moment from 'moment';
 import Clock from './Clock';
 import Weather from './Weather';
 import ApplicationShortCut from './ApplicationShortCut';
 import SlideStepper from './SlideStepper';
 import Slide from './Slide';
+import AgendaItem from './AgendaItem';
+import Agenda from './Agenda';
 
 const createElement = (element, handleRemove) => {
   const removeStyle = {
@@ -74,6 +77,41 @@ const createElement = (element, handleRemove) => {
                 />
               </SlideStepper>
             );
+          case 'AgendaItem':
+            return (
+              <AgendaItem
+                title="Dis be agenda item"
+                start={moment().add(2, 'days')}
+                end={moment().add(2, 'days').add(2, 'hours')}
+              />
+            );
+          case 'Agenda':
+            return (
+              <Agenda
+                visibleItemCount={4}
+              >
+                <AgendaItem
+                  title="Dis be agenda item"
+                  start={moment().add(2, 'days')}
+                  end={moment().add(2, 'days').add(2, 'hours')}
+                />
+                <AgendaItem
+                  title="De bloemetjes buitenzetten"
+                  start={moment().add(4, 'days')}
+                  end={moment().add(4, 'days').add(3, 'hours')}
+                />
+                <AgendaItem
+                  title="Carnaval Avond"
+                  start={moment().add(12, 'days')}
+                  end={moment().add(12, 'days').add(2, 'hours')}
+                />
+                <AgendaItem
+                  title="PO meeting"
+                  start={moment().add(30, 'days')}
+                  end={moment().add(30, 'days').add(2, 'hours')}
+                />
+              </Agenda>
+            )
           default:
             return <div className="textWidget">{widget}</div>;
         }
