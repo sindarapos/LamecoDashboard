@@ -11,6 +11,9 @@ import SlideStepper from './SlideStepper';
 import Slide from './Slide';
 import AgendaItem from './AgendaItem';
 import Agenda from './Agenda';
+import {
+  AGENDA_TYPES
+} from './constants';
 
 const createElement = (element, handleRemove) => {
   const removeStyle = {
@@ -93,6 +96,7 @@ const createElement = (element, handleRemove) => {
                 <AgendaItem
                   title="Dis be agenda item"
                   description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  type={AGENDA_TYPES.APPOINTMENT}
                   start={moment().add(2, 'days')}
                   end={moment().add(2, 'days').add(2, 'hours')}
                   bottomBorder
@@ -100,6 +104,7 @@ const createElement = (element, handleRemove) => {
                 <AgendaItem
                   title="De bloemetjes buitenzetten"
                   description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  type={AGENDA_TYPES.APPOINTMENT}
                   start={moment().add(4, 'days')}
                   end={moment().add(4, 'days').add(3, 'hours')}
                   bottomBorder
@@ -107,6 +112,7 @@ const createElement = (element, handleRemove) => {
                 <AgendaItem
                   title="Carnaval Avond"
                   description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  type={AGENDA_TYPES.TEAM_BUILDING}
                   start={moment().add(12, 'days')}
                   end={moment().add(12, 'days').add(2, 'hours')}
                   bottomBorder
@@ -114,11 +120,13 @@ const createElement = (element, handleRemove) => {
                 <AgendaItem
                   title="PO meeting"
                   description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  type={AGENDA_TYPES.TEAM_BUILDING}
                   start={moment().add(30, 'days')}
                   end={moment().add(30, 'days').add(2, 'hours')}
                 />
                 <AgendaItem
-                  title="PO meeting"
+                  title="Tom is jarig"
+                  type={AGENDA_TYPES.BIRTHDAY}
                   start={moment().add(30, 'days')}
                   end={moment().add(30, 'days').add(2, 'hours')}
                 />
