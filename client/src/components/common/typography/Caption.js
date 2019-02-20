@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import ExtendWithFont from './ExtendWithFont';
 
 const StyledTitle = styled.h3`
-  font-size: 2em;
+  font-size: 1.5em;
   margin-top: 0;
+  line-height: 1.5em;
 `;
 
-const Title = (props) => {
+const Caption = (props) => {
   const { children } = props;
   return (
     <ExtendWithFont>
@@ -17,7 +18,7 @@ const Title = (props) => {
   );
 };
 
-Title.propTypes = {
+Caption.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.instanceOf(styled),
     PropTypes.string,
@@ -25,4 +26,4 @@ Title.propTypes = {
   ]).isRequired,
 };
 
-export default Title;
+export default Caption;

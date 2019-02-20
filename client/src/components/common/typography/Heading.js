@@ -3,17 +3,18 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ExtendWithFont from './ExtendWithFont';
 
-const StyledBody = styled.p`
+const StyledHeading = styled.p`
+  margin-top: 0;
+  font-weight: bold;
   ${props => `
-    margin-top: 0;
     font-size:
     ${(props.variant === 'normal' && '1em')
-    || (props.variant === 'small' && '0.8125em')
-    || (props.variant === 'large' && '1.2em')};
+|| (props.variant === 'small' && '0.8125em')
+|| (props.variant === 'large' && '1.2em')};
   `}
 `;
 
-const Body = (props) => {
+const Heading = (props) => {
   const {
     variant,
     children,
@@ -22,20 +23,20 @@ const Body = (props) => {
 
   return (
     <ExtendWithFont>
-      <StyledBody className={className} variant={variant}>{children}</StyledBody>
+      <StyledHeading className={className} variant={variant}>{children}</StyledHeading>
     </ExtendWithFont>
   );
 };
 
-Body.propTypes = {
+Heading.propTypes = {
   children: PropTypes.string.isRequired,
   className: PropTypes.string,
   variant: PropTypes.string,
 };
 
-Body.defaultProps = {
+Heading.defaultProps = {
   variant: 'normal',
   className: '',
 };
 
-export default Body;
+export default Heading;

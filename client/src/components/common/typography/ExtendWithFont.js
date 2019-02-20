@@ -4,14 +4,11 @@ import styled from 'styled-components';
 import {
   FONT_FAMILY,
   FONT_STYLE,
-  FONT_WEIGHT
+  FONT_WEIGHT,
 } from './constants';
 
-const StyledTitle = styled.h3`
-  font-size: 2em;
-`;
-
 const WithFont = styled.div`
+  text-align: start;
   font-family: ${FONT_FAMILY};
   font-style: ${FONT_STYLE};
   font-weight: ${FONT_WEIGHT};
@@ -20,19 +17,18 @@ const WithFont = styled.div`
 const ExtendWithFont = (props) => {
   const { children } = props;
   return (
-    React.Children.map(children, (child) =>
-      //@Todo merge styles instead of wrapping in a div
+    React.Children.map(children, child => (
       <WithFont>
         {child}
       </WithFont>
-    )
+    ))
   );
 };
 
 ExtendWithFont.proptypes = {
   children: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-  )
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
+  ),
 };
 
 export default ExtendWithFont;

@@ -3,11 +3,17 @@
  * which output is based on the widget property from the grid items.
  */
 import React from 'react';
+import moment from 'moment';
 import Clock from './Clock';
 import Weather from './Weather';
 import ApplicationShortCut from './ApplicationShortCut';
 import SlideStepper from './SlideStepper';
 import Slide from './Slide';
+import AgendaItem from './AgendaItem';
+import Agenda from './Agenda';
+import {
+  AGENDA_TYPES
+} from './constants';
 
 const createElement = (element, handleRemove) => {
   const removeStyle = {
@@ -73,6 +79,63 @@ const createElement = (element, handleRemove) => {
                   }}
                 />
               </SlideStepper>
+            );
+          case 'AgendaItem':
+            return (
+              <AgendaItem
+                title="Dis be agenda item"
+                start={moment().add(2, 'days')}
+                end={moment().add(2, 'days').add(2, 'hours')}
+              />
+            );
+          case 'Agenda':
+            return (
+              <Agenda
+                visibleItemCount={5}
+              >
+                <AgendaItem
+                  title="Dis be agenda item"
+                  description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  type={AGENDA_TYPES.APPOINTMENT}
+                  start={moment().add(2, 'days')}
+                  end={moment().add(2, 'days').add(2, 'hours')}
+                  bottomBorder
+                />
+                <AgendaItem
+                  title="De bloemetjes buitenzetten"
+                  description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  type={AGENDA_TYPES.APPOINTMENT}
+                  start={moment().add(4, 'days')}
+                  end={moment().add(4, 'days').add(3, 'hours')}
+                  bottomBorder
+                />
+                <AgendaItem
+                  title="Carnaval Avond"
+                  description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  type={AGENDA_TYPES.TEAM_BUILDING}
+                  start={moment().add(12, 'days')}
+                  end={moment().add(12, 'days').add(2, 'hours')}
+                  bottomBorder
+                />
+                <AgendaItem
+                  title="PO meeting"
+                  description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+                  type={AGENDA_TYPES.TEAM_BUILDING}
+                  start={moment().add(30, 'days')}
+                  end={moment().add(30, 'days').add(2, 'hours')}
+                />
+                <AgendaItem
+                  title="Tom is jarig"
+                  type={AGENDA_TYPES.BIRTHDAY}
+                  start={moment().add(30, 'days')}
+                  end={moment().add(30, 'days').add(2, 'hours')}
+                />
+                <AgendaItem
+                  title="PO meeting"
+                  start={moment().add(30, 'days')}
+                  end={moment().add(30, 'days').add(2, 'hours')}
+                />
+              </Agenda>
             );
           default:
             return <div className="textWidget">{widget}</div>;
