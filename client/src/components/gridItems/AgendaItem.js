@@ -4,11 +4,13 @@ import styled from 'styled-components';
 import moment from 'moment';
 import Dialog from '@material-ui/core/Dialog';
 import { FullSize } from '../common/spacing';
-import { Caption, Body } from '../common/typography';
+import { Caption, Heading, Body } from '../common/typography';
+import { AGENDA_TYPES, AGENDA_TYPE_COLORS } from './constants';
 
 const AgendaItemContainer = styled(FullSize)`
   ${props => `
-    border-bottom: ${props.bottomBorder ? '1px #DEDEDE solid' : ''};
+    border-bottom: ${props.bottomBorder ? '1px rgba(112, 112, 112, 0.23) solid' : ''};
+    background-color: ${props.backgroundColor}
   `}
 `;
 
@@ -25,7 +27,7 @@ const EqualWidthContainer = styled.div`
   width: 50%;
 `;
 
-const BodyWithTopPadding = styled(Body)`
+const HeadingWithTopPadding = styled(Heading)`
   padding-top: 0.42em;
 `;
 
@@ -43,13 +45,11 @@ class AgendaItem extends React.Component {
   }
 
   handleOpen() {
-    console.log('opening the modal');
     this.setState({ open: true });
   }
 
   handleClose(event) {
     event.stopPropagation();
-    console.log('closing the modal');
     this.setState({ open: false });
   }
 
@@ -70,6 +70,7 @@ class AgendaItem extends React.Component {
       disableOpen,
       description,
       showDescription,
+      type,
     } = this.props;
 
     const {
@@ -80,6 +81,7 @@ class AgendaItem extends React.Component {
       <AgendaItemContainer
         bottomBorder={bottomBorder}
         onClick={this.handleOnClick}
+        backgroundColor={AGENDA_TYPE_COLORS[type]}
       >
         <FlexContainer>
           <EqualWidthContainer>
@@ -88,9 +90,9 @@ class AgendaItem extends React.Component {
             </Caption>
           </EqualWidthContainer>
           <EqualWidthContainer>
-            <BodyWithTopPadding variant="large">
+            <HeadingWithTopPadding variant="large">
               {start.format(dateFormat)}
-            </BodyWithTopPadding>
+            </HeadingWithTopPadding>
             <Body variant="normal">
               {`van ${start.format(timeFormat)} tot ${end.format(timeFormat)}`}
             </Body>
@@ -133,6 +135,7 @@ AgendaItem.propTypes = {
   disableOpen: PropTypes.bool,
   showDescription: PropTypes.bool,
   code: PropTypes.string,
+  type: PropTypes.oneOf(AGENDA_TYPES),
 };
 
 AgendaItem.defaultProps = {
@@ -144,6 +147,7 @@ AgendaItem.defaultProps = {
   disableOpen: false,
   showDescription: false,
   code: 'parent',
+  type: AGENDA_TYPES.APPOINTMENT,
 };
 
 export default AgendaItem;
