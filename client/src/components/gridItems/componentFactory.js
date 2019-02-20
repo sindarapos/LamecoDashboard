@@ -111,7 +111,7 @@ const createElement = (element, handleRemove) => {
                   end={moment().add(30, 'days').add(2, 'hours')}
                 />
               </Agenda>
-            )
+            );
           default:
             return <div className="textWidget">{widget}</div>;
         }
