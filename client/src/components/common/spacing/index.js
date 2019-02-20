@@ -5,5 +5,5 @@ import FullSize from './FullSize';
 export {
   Justify,
   Overlay,
-  FullSize
-}
+  FullSize,
+};
