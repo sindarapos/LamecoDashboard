@@ -12,7 +12,7 @@ import Slide from './Slide';
 import AgendaItem from './AgendaItem';
 import Agenda from './Agenda';
 import {
-  AGENDA_TYPES
+  AGENDA_TYPES,
 } from './constants';
 
 const createElement = (element, handleRemove) => {
