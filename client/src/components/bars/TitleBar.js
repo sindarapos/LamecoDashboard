@@ -30,7 +30,7 @@ class TitleBar extends Component {
     return (
       <div className="titleBar">
         <h1>
-          <Link to="/">Laméco</Link>
+          <Link to="/">Oddessey Dashboard</Link>
         </h1>
         <ul className="contentRight">
           {/* <li>
