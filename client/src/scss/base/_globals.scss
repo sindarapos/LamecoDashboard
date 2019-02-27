@@ -21,7 +21,7 @@ body {
   }
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: $color-red;
+    background: $color-orange;
     border-radius: 10px;
   }
   ul {
@@ -31,7 +31,7 @@ body {
     margin-block-start: 0;
     color: $color-grey;
     li:hover {
-      color: $color-red;
+      color: $color-blue;
     }
   }
 }

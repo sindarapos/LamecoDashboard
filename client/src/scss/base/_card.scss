@@ -47,7 +47,7 @@
     }
     .overlayImage:after {
       position: absolute;
-      background-color: $color-red-transparent;
+      background-color: $color-blue-transparent;
       content: "";
       top: 0;
       left: 0;
@@ -95,7 +95,7 @@
                 background: transparent;
                 border: 0;
                 outline: 0;
-                border-bottom: 2px solid $color-red-transparent;
+                border-bottom: 2px solid $color-blue-transparent;
               }
               ::placeholder {
                 color: rgb(185, 185, 185);
@@ -103,7 +103,7 @@
               .invalid {
                 margin-top: 2px;
                 font-size: 0.8em;
-                color: $color-red;
+                color: $color-blue;
               }
             }
           }
@@ -126,7 +126,7 @@
               cursor: pointer;
 
               .selected {
-                color: $color-red;
+                color: $color-blue;
               }
             }
             height: 175px;
@@ -157,5 +157,5 @@
   padding: 0 0 0 10px;
 
   font-size: 0.9em;
-  border-left: 1px solid $color-red;
+  border-left: 1px solid $color-blue;
 }

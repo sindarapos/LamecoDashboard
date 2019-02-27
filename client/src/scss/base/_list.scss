@@ -8,7 +8,7 @@
 .list {
   margin: 0;
   padding: 0;
-  color: $color-red;
+  color: $color-blue;
   font-weight: bold;
   list-style-type: none;
   li {
@@ -27,7 +27,7 @@
         color: $color-grey;
         transition: 0.3s ease all;
         &:hover {
-          color: $color-red;
+          color: $color-blue;
         }
       }
       &::before {
@@ -37,7 +37,7 @@
         left: -10px;
         width: 1px;
         height: 100%;
-        background-color: $color-red;
+        background-color: $color-blue;
       }
       &:first-child {
         margin-top: 5px;

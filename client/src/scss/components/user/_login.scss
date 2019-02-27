@@ -23,7 +23,7 @@
     }
     .overlayImage {
       position: absolute;
-      background-color: $color-red-transparent;
+      background-color: $color-blue-transparent;
       width: 100%;
       height: 100vh;
     }
@@ -38,7 +38,7 @@
       position: absolute;
       top: 25vh;
       left: 17.5%;
-      color: $color-red;
+      color: $color-blue;
     }
     .loginForm.slide-enter,
     .forgotForm.reverse.slide-enter,
@@ -103,7 +103,7 @@
           justify-content: space-between;
           span a {
             text-align: right;
-            color: $color-red;
+            color: $color-blue;
             text-decoration: none;
             line-height: 24px;
           }
@@ -146,7 +146,7 @@
             background: transparent;
             border: 0;
             outline: 0;
-            border-bottom: 2px solid $color-red-transparent;
+            border-bottom: 2px solid $color-blue-transparent;
           }
           ::placeholder {
             color: rgb(185, 185, 185);
@@ -154,7 +154,7 @@
           .invalid {
             margin-top: 2px;
             font-size: 0.8em;
-            color: $color-red;
+            color: $color-blue;
           }
         }
       }
@@ -166,7 +166,7 @@
         align-content: center;
         a {
           text-align: left;
-          color: $color-red;
+          color: $color-blue;
           text-decoration: none;
           line-height: 24px;
           display: flex;
@@ -213,7 +213,7 @@
             background: transparent;
             border: 0;
             outline: 0;
-            border-bottom: 2px solid $color-red-transparent;
+            border-bottom: 2px solid $color-blue-transparent;
           }
           ::placeholder {
             color: rgb(185, 185, 185);
@@ -221,7 +221,7 @@
           .invalid {
             margin-top: 2px;
             font-size: 0.8em;
-            color: $color-red;
+            color: $color-blue;
           }
         }
       }
@@ -231,7 +231,7 @@
           justify-content: space-between;
           span a {
             text-align: right;
-            color: $color-red;
+            color: $color-blue;
             text-decoration: none;
             line-height: 24px;
           }
@@ -267,7 +267,7 @@
         height: 10vh;
         a {
           text-align: left;
-          color: $color-red;
+          color: $color-blue;
           text-decoration: none;
           line-height: 24px;
           display: flex;
@@ -298,14 +298,14 @@
         text-align: justify;
       }
       a.inForm {
-        color: $color-red;
+        color: $color-blue;
       }
       a.inForm:hover {
         text-decoration: underline;
       }
       a.bottomForm {
         text-align: left;
-        color: $color-red;
+        color: $color-blue;
         text-decoration: none;
         line-height: 24px;
         width: 130px;

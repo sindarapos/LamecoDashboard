@@ -1,7 +1,7 @@
 .btn {
   position: relative;
   background-color: transparent;
-  border: 2px solid $color-red;
+  border: 2px solid $color-orange;
   border-radius: 30px;
   background-clip: padding-box;
   color: $color-black;
@@ -31,7 +31,7 @@
 
   &.red {
     color: $color-white;
-    background-color: $color-red;
+    background-color: $color-orange;
   }
 
   &::before {
@@ -42,7 +42,7 @@
     height: 100%;
     left: -20%;
     top: 0;
-    background: $color-red;
+    background: $color-orange;
     z-index: -1;
     transform: translate(-110%, 0) skew(45deg);
     box-sizing: border-box;
@@ -64,7 +64,7 @@
 
   &:disabled,
   &[disabled] {
-    border-color: lighten($color-red, 40);
+    border-color: lighten($color-orange, 40);
     color: lighten($color-grey, 40);
     cursor: default;
 
@@ -87,7 +87,7 @@
   }
 
   &:hover {
-    color: $color-red;
+    color: $color-orange;
     transition: 0.3s ease all;
   }
 
