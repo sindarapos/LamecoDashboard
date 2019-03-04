@@ -4,6 +4,7 @@
   background-color: $color-white;
   transition: all 200ms ease;
   transition-property: left, top;
+  overflow: hidden;
 }
 
 .textWidget {
