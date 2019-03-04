@@ -10,9 +10,9 @@ const StyledTitle = styled.h3`
 `;
 
 const Caption = (props) => {
-  const { children } = props;
+  const { children, color } = props;
   return (
-    <ExtendWithFont>
+    <ExtendWithFont color={color}>
       <StyledTitle>{children}</StyledTitle>
     </ExtendWithFont>
   );
@@ -24,6 +24,11 @@ Caption.propTypes = {
     PropTypes.string,
     PropTypes.func,
   ]).isRequired,
+  color: PropTypes.string,
 };
+
+Caption.defaultProps = {
+  color: null,
+}
 
 export default Caption;
