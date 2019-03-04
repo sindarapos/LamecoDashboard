@@ -61,9 +61,12 @@ class SlideStepper extends React.Component {
 }
 
 SlideStepper.propTypes = {
-  children: PropTypes.arrayOf(
-    PropTypes.instanceOf(Slide),
-  ),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.instanceOf(Slide),
+    ),
+    PropTypes.string,
+  ]),
   interval: PropTypes.number,
   autoplay: PropTypes.bool,
 };

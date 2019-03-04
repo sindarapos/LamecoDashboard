@@ -37,7 +37,7 @@ const Slide = (props) => {
 Slide.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  content: PropTypes.oneOf([PropTypes.string, PropTypes.func, PropTypes.object]).isRequired,
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]).isRequired,
 };
 
 Slide.defaultProps = {
