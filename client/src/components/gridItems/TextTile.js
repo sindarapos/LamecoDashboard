@@ -18,7 +18,7 @@ const TextTile = (props) => {
   } = props;
   return (
     <StyledContainer>
-      <Title>{title}</Title>
+      <Caption color={FONT_COLOR.BLUE}>{title}</Caption>
       <Body>{description}</Body>
     </StyledContainer>
   )
