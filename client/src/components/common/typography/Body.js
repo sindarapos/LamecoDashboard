@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import ExtendWithFont from './ExtendWithFont';
 
 const StyledBody = styled.p`
-  ${props => `
+  ${props => ` 
     margin-top: 0;
     font-size:
     ${(props.variant === 'normal' && '1em')
     || (props.variant === 'small' && '0.8125em')
     || (props.variant === 'large' && '1.2em')};
+    font-weight: 400;
   `}
 `;
 
