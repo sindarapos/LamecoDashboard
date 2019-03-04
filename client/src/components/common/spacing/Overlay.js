@@ -2,18 +2,16 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const DEFAULT_PROPS = {
-  Z_INDEX: 2
+  Z_INDEX: 2,
 };
 
-const interpretHorizontalPosition = (position) =>
-  position === 'end'
-    ? 'flex-end'
-    : 'flex-start';
+const interpretHorizontalPosition = position => (position === 'end'
+  ? 'flex-end'
+  : 'flex-start');
 
-const interpretVerticalPosition = (position) =>
-  position === 'bottom'
-    ? 'column-reverse'
-    : 'column';
+const interpretVerticalPosition = position => (position === 'bottom'
+  ? 'column-reverse'
+  : 'column');
 
 const Overlay = styled.div`
   display: flex;
@@ -23,7 +21,7 @@ const Overlay = styled.div`
   overflow: hidden;
   top: 0;
   left: 0;
-  ${(props) => `
+  ${props => `
     flex-direction: ${interpretVerticalPosition(props.verticalPosition)};
     align-items: ${interpretHorizontalPosition(props.horizontalPosition)};
     z-index: ${props.zIndex || DEFAULT_PROPS.Z_INDEX};
@@ -32,7 +30,7 @@ const Overlay = styled.div`
 
 Overlay.propTypes = {
   horizontalPosition: PropTypes.oneOf(['start', 'end']),
-  verticalPosition: PropTypes.oneOf(['top', 'bottom'])
+  verticalPosition: PropTypes.oneOf(['top', 'bottom']),
 };
 
 export default Overlay;
