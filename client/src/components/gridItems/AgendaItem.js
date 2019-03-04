@@ -90,7 +90,7 @@ class AgendaItem extends React.Component {
             </Caption>
           </EqualWidthContainer>
           <EqualWidthContainer>
-            <HeadingWithTopPadding variant="large">
+            <HeadingWithTopPadding variant="large" disableMarginBlockEnd={false} disableMarginBlockstart={false}>
               {start.format(dateFormat)}
             </HeadingWithTopPadding>
             <Body variant="normal">

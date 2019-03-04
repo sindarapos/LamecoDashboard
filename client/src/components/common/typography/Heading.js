@@ -19,10 +19,15 @@ const Heading = (props) => {
     variant,
     children,
     className,
+    disableMarginBlockEnd,
+    disableMarginBlockStart,
   } = props;
 
   return (
-    <ExtendWithFont>
+    <ExtendWithFont
+      disableMarginBlockEnd={disableMarginBlockEnd}
+      disableMarginBlockStart={disableMarginBlockStart}
+    >
       <StyledHeading className={className} variant={variant}>{children}</StyledHeading>
     </ExtendWithFont>
   );
@@ -32,11 +37,15 @@ Heading.propTypes = {
   children: PropTypes.string.isRequired,
   className: PropTypes.string,
   variant: PropTypes.string,
+  disableMarginBlockEnd: PropTypes.bool,
+  disableMarginBlockStart: PropTypes.bool,
 };
 
 Heading.defaultProps = {
   variant: 'normal',
   className: '',
+  disableMarginBlockEnd: false,
+  disableMarginBlockStart: false,
 };
 
 export default Heading;
