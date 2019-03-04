@@ -59,6 +59,7 @@ const createElement = (element, handleRemove) => {
             return (
               <SlideStepper
                 autoplay
+                interval={7000}
               >
                 <Slide
                   title="Dem first slide"
