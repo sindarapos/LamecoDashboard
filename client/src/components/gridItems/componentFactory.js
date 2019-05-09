@@ -62,12 +62,12 @@ const createElement = (element, handleRemove) => {
                 interval={7000}
               >
                 <Slide
-                  title="Dem first slide"
-                  description="A nice description, indeed."
+                  title="Diving in Cenete, le Pit"
+                  description="Een duik van 45 minuten, 200m diep!"
                   content={{
                     type: 'image',
-                    imagePath: 'https://picsum.photos/200/300/?random',
-                    imageLabel: 'Dis be image',
+                    imagePath: 'https://i.imgur.com/KGLdoJF.jpg',
+                    imageLabel: 'le pit',
                   }}
                 />
                 <Slide
